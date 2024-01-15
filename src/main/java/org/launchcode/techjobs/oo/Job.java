@@ -97,26 +97,26 @@ public class Job {
     @Override
     public String toString() {
        String line = System.lineSeparator();
-       String jobName = this.getName();
        String noData = "Data not available";
-       if(jobName == null) {
+       String jobName = this.getName();
+       if(jobName.isEmpty()) {
            jobName = noData;
        }
        String jobEmployer = noData;
-       if(this.getEmployer() != null) {
+       if(!this.getEmployer().getValue().isEmpty()) {
            jobEmployer = this.getEmployer().getValue();
        }
 
        String jobLocation = noData;
-       if(this.getLocation() != null) {
+       if(!this.getLocation().getValue().isEmpty()) {
            jobLocation = this.getLocation().getValue();
        }
        String jobPosition = noData;
-       if(this.getPositionType()  != null) {
+       if(!this.getPositionType().getValue().isEmpty()) {
            jobPosition = this.getPositionType().getValue();
        }
        String jobCompetency = noData;
-       if(this.getCoreCompetency() != null) {
+       if(!this.getCoreCompetency().getValue().isEmpty()) {
            jobCompetency = this.getCoreCompetency().getValue();
        }
 

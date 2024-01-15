@@ -151,6 +151,7 @@ public class TestTaskTwo extends AbstractTest {
                 Class superclass = PositionType.class.getSuperclass();
                 assertEquals(jobFieldClass, superclass);
                 superclass.getDeclaredMethod("hashCode");
+
             } catch (NoSuchMethodException | ClassNotFoundException ex) {
                 fail("PositionType does not declare an hashCode method");
             }
@@ -170,6 +171,7 @@ public class TestTaskTwo extends AbstractTest {
         anotherPositionTypeIdField.setAccessible(true);
         anotherPositionTypeIdField.set(anotherPositionType, positionType.getId());
         assertEquals(hashCodeMethod.invoke(positionType), hashCodeMethod.invoke(anotherPositionType));
+
     }
 
 }
