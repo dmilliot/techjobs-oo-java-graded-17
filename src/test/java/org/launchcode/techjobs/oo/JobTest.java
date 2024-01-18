@@ -70,4 +70,13 @@ public class JobTest {
         assertTrue(jobString.contains("Core Competency: Data not available"));
 
     }
+    @Test
+    public void testToStringStartsAndEndsWithNewLine() {
+        Job newJob = new Job("",new Employer(""),new Location(""),new PositionType(""),new CoreCompetency(""));
+        String line = System.lineSeparator();
+        String result = newJob.toString();
+
+        assertTrue(result.startsWith(line));
+        assertTrue(result.endsWith(line));
+    }
 }
